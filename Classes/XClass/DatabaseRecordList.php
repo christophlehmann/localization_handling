@@ -20,34 +20,6 @@ class DatabaseRecordList extends \TYPO3\CMS\Recordlist\RecordList\DatabaseRecord
     protected $copiedElementsMap;
 
     /**
-     * Creates the listing of records from a single table
-     *
-     * @param string $table Table name
-     * @param int $id Page id
-     * @param string $rowList List of fields to show in the listing. Pseudo fields will be added including the record header.
-     * @return string HTML table with the listing for the record.
-     * @throws \UnexpectedValueException
-     */
-    public function getTable($table, $id, $rowList = '')
-    {
-        return parent::getTable($table, $id, $rowList);
-        if ($table === 'tt_content') {
-            $localizationConfiguration = BackendUtility::getPagesTSconfig($this->id)['mod.']['web_layout.']['localization.'] ?? [];
-            $copyEnabled = !isset($localizationConfiguration['enableCopy']) || (isset($localizationConfiguration['enableCopy']) && (bool)$localizationConfiguration['enableCopy'] === true);
-            $localizationEnabled = !isset($localizationConfiguration['enableTranslate']) || (isset($localizationConfiguration['enableTranslate']) && (bool)$localizationConfiguration['enableTranslate'] === true);
-            if ($copyEnabled || !$localizationEnabled) {
-                unset($GLOBALS['TCA']['tt_content']['ctrl']['languageField']);
-                return parent::getTable($table, $id, $rowList);
-            }
-
-            $table = 'tt_content';
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
-        }
-
-        return parent::getTable($table, $id, $rowList);
-    }
-
-    /**
      * Creates the localization panel
      *
      * @param string $table The table
