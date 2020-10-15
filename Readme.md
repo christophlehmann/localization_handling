@@ -5,8 +5,7 @@ According to this recordlist example
 ![Recordlist](/Documentation/Images/tt_content_recordlist.png)
 
 * A "Localization flag" is shown when
-  * Target language is not in "copy mode"
-  * There is no copy of the element in the target language
+  * There is no copy OR translation of the element in the target language
 
 * A "Localization flag" triggers the localization dialog
   * It respects/unifies [PageLayoutView - Allow to disable copy- / translate- buttons](https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/9.0/Feature-76910-PageLayoutViewAllowToDisableCopyTranslateButtons.html)
