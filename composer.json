@@ -1,0 +1,16 @@
+{
+  "name": "christophlehmann/localization_handling",
+  "type": "typo3-cms-extension",
+  "description": "Improves localization handling in terms of copy/translation mode",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "require": {
+    "typo3/cms-core": "^10.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "ChristophLehmann\\LocalizationHandling\\": "Classes/"
+    }
+  }
+}
