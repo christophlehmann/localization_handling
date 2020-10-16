@@ -15,8 +15,15 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class DatabaseRecordList extends \TYPO3\CMS\Recordlist\RecordList\DatabaseRecordList
 {
+
+    /**
+     * @var array
+     */
     protected $languageTranslationModeMap;
 
+    /**
+     * @var array
+     */
     protected $copiedElementsMap;
 
     /**
