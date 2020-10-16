@@ -10,12 +10,13 @@ According to this recordlist example
 * A "Localization flag" triggers the localization dialog
   * It respects/unifies [PageLayoutView - Allow to disable copy- / translate- buttons](https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/9.0/Feature-76910-PageLayoutViewAllowToDisableCopyTranslateButtons.html)
   * It checks if target language is in copy or translation mode and disables copy/translation to prevent "mixed mode"
+  * Further improvement: Skip dialog if only one possibility (copy/translate) is possibly. New would be the creation of a copy of that element. 
 
 ![LocalizationWizard](/Documentation/Images/localization_copy_wizard_in_listview.png)
 
 #### Further possibilities which may lead to mixed content
 
-In the "edit view" there is the language navigation. My idea ist to replace it with 
+In the "edit view" there is the language navigation. My idea is to replace it with 
 
 * "flag buttons" with an arrow to jump to the target language
 * "flag buttons" with a + which creates a new translation
@@ -23,7 +24,6 @@ In the "edit view" there is the language navigation. My idea ist to replace it w
 or simple adapt the links to trigger the localization wizard 
 
 ![LocalizationWizard](/Documentation/Images/language_switch_edit_view.png)
-
 
 #### Related issues
 
