@@ -23,3 +23,9 @@ In the "edit view" there is the language navigation. My idea ist to replace it w
 or simple adapt the links to trigger the localization wizard 
 
 ![LocalizationWizard](/Documentation/Images/language_switch_edit_view.png)
+
+
+#### Related issues
+
+* https://forge.typo3.org/issues/92564
+* https://forge.typo3.org/issues/90790
