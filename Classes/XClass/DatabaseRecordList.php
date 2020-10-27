@@ -138,6 +138,10 @@ class DatabaseRecordList extends \TYPO3\CMS\Recordlist\RecordList\DatabaseRecord
 
     protected function createLanguageTranslationModeMap()
     {
+        if (count($this->pageOverlays) == 0) {
+            return;
+        }
+
         $localizationConfiguration = BackendUtility::getPagesTSconfig($this->id)['mod.']['web_layout.']['localization.'] ?? [];
         $copyEnabled = !isset($localizationConfiguration['enableCopy']) || (isset($localizationConfiguration['enableCopy']) && (bool)$localizationConfiguration['enableCopy'] === true);
         $localizationEnabled = !isset($localizationConfiguration['enableTranslate']) || (isset($localizationConfiguration['enableTranslate']) && (bool)$localizationConfiguration['enableTranslate'] === true);
