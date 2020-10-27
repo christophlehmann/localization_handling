@@ -70,7 +70,7 @@ class DatabaseRecordList extends \TYPO3\CMS\Recordlist\RecordList\DatabaseRecord
             foreach ($this->pageOverlays as $lUid_OnPage => $lsysRec) {
 
 // Patch Start - do not show translation flag if element was already copied
-                if (in_array($translations['uid'], $this->copiedElementsMap[$lUid_OnPage])) {
+                if (in_array($translations['uid'], (array)$this->copiedElementsMap[$lUid_OnPage])) {
                     continue;
                 }
 // Patch end
